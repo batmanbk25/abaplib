@@ -1,0 +1,3402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+    <VERSION>1</VERSION>
+    <LANGU>E</LANGU>
+    <DESCRIPT>BusinessDocumentSet</DESCRIPT>
+    <UUID/>
+    <CATEGORY>00</CATEGORY>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <RELEASE>0</RELEASE>
+    <AUTHOR/>
+    <CREATEDON>0000-00-00</CREATEDON>
+    <CHANGEDBY/>
+    <CHANGEDON>0000-00-00</CHANGEDON>
+    <CHGDANYBY/>
+    <CHGDANYON>0000-00-00</CHGDANYON>
+    <CLSEMBED/>
+    <CLSABSTRCT/>
+    <CLSFINAL>X</CLSFINAL>
+    <CLSCCINCL>X</CLSCCINCL>
+    <REMOTE/>
+    <FIXPT/>
+    <VARCL/>
+    <UNICODE>X</UNICODE>
+    <RSTAT/>
+    <CLSDEFATT/>
+    <CLSDEFMTD/>
+    <CLSDEFINT/>
+    <CLSBCIMPL/>
+    <R3RELEASE/>
+    <CLSBCTRANS/>
+    <CLSBCCAT>00</CLSBCCAT>
+    <CLSADDON/>
+    <MSG_ID/>
+    <CLSBCNODEL/>
+    <CLSPROXY/>
+    <CLSSHAREDMEMORY/>
+    <WITH_UNIT_TESTS/>
+    <DURATION_TYPE>0</DURATION_TYPE>
+    <RISK_LEVEL>0</RISK_LEVEL>
+    <WITHIN_PACKAGE/>
+   </VSEOCLASS>
+   <TPOOL/>
+   <LINES>
+    <TLINE>
+     <TDFORMAT>U1</TDFORMAT>
+     <TDLINE>&amp;FUNCTIONALITY&amp;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The Business Document Service (BDS) provides general and easily</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>integratable document management functions for SAP applications. The</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>central component of these functions is the Business Document Navigator</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>(BDN) navigation interface. This user interface enables users to</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>interactively perform document management functions (displaying,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>creating and deleting, for example).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The BDS is strongly linked with the business processes in an</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>enterprise, expressed in particular in general object relationships.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>Together with SAP Desktop Office Integration, the BDS represents a</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>software solution package for the integration of general desktop office</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>applications.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The BDS has the following features:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Simple handling of desktop office products</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Support of scenarios for</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Authoring</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Publishing</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Retrieval</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Storing private and shared documents</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>User interface for</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Attribute assignment</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Classification</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Detailed information and document information</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Displaying</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Changing</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Navigation</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Connection to the Change &lt;(&gt;&amp;&lt;)&gt; Transport System</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>LZ</TDFORMAT>
+     <TDLINE/>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>Class CL_BDS_DOCUMENT_SET is a central component of the BDS.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>LZ</TDFORMAT>
+     <TDLINE/>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The BDS provides an interface that typically works on the basis of</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>identifying a business document set and context information. For</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>identification, the application needs to know only its own logical</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>system, its class name, possibly its client and its object key.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The CL_BDS_DOCUMENT_SET functions can be divided into two groups:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>general functions, which relate to the Business Document Set and</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>specific functions:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>General functions</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>DELETE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>GET_INFO</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>GET_INFO_NEWEST_ONLY</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>CALL_NAVIGATOR</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>CONFIRM_CREATE/_UPDATE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>CREATE_WITH_FILES/_URL/_TABLE/AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>UPDATE_WITH_FILES/_URL/_TABLE/AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>GET_WITH_FILES/_URL/_TABLE/AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>DELETE_PROPERTIES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>CHANGE_PROPERTIES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Specific functions</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Functions for versions and variants</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>- CREATE_VERSION_WITH_FILES/_URL/_TABLE/AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>- CREATE_VARIANT_WITH_FILES/_URL/_TABLE/AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Functions for relations</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>- GET_RELATIONS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>- CREATE_RELATION</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>- DELETE_RELATIONS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>- QUERY_RELATIONS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Functions for transport</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>- GET_TRANSPORT_INFOS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Parameters</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>Application objects are identified by the following parameters:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>LOGICAL_SYSTEM</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Logical system, ID of SAP System instance</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CLASSNAME</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Class name, name of application class</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CLASSTYPE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Class type, type of application class</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>OBJKEY</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Object key</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CLIENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Client</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>This parameter is  optional other than for client-dependent documents,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>where it must be used.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object is identified and the relevant Document Set</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>determined by a query of all documents that are assigned to this</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>application object.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>Individual documents are specified by the following parameters:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_ID</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document identification</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_VER_NO</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document version number</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_VAR_ID</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document variant identification</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Tables</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Signature table</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>Documents are identified by the parameter SIGNATURE using the signature</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>table. This table is used to perform both the query and the reply: If</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>you specify what you know about the document or documents concerned,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>you are given the number of documents that correpsond to the criteria.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>The attributes of one or more documents can be transferred in the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>signature table. The signature table has the following fields:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document counter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>This field counts indivdual document variants. There can be several</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>entries per variant, but the individual entries differ only in</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>attribute name and attribute value.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_ID</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document identification</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_VER_NO</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document version number</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_VAR_ID</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document variant identification</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_VAR_TG</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document variant tag</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>The type of variant is specified A variant can have three forms:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Original</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Language variant</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Format variant</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMP_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Component counter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>PROP_NAME</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Attribute name</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>PROP_VALUE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Attribut value</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The more fields you specify, the fewer hits will be found. This means</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>that you can restrict the search to a single variant, for example.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Component table</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The table COMPONENTS concerns components of a document set. Components</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>for a number of documents can be transferred:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document counter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>This field counts the individual document variants. There can be</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>several entries per variant. If this is the case, the individual</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>entries differ only in attribute name and attribute value.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMP_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Component counter for a document</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMP_ID</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Component identification</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>MIMETYPE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>MIME type of component</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMP_SIZE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Size of component</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>File table</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The table FILES is used for handling document content using local</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>files. It contains the following fields:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document counter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>This field counts individual document variants. There can be several</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>entries per variant. If this is the case, the individual entries differ</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>only in attribute name and attribute value.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMP_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Component counter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>This counts the components of a document.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DIRECTORY</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Name of source directory</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>FILENAME</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>File name</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>MIMETYPE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>MIME type of component</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>URL table</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The content is transferred via URLs in the URL table, that is, complete</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>URLs are transferred. This specifies where the documents can be stored.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>The URL table has the following fields:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document counter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>This field counts individual document variants. There can be several</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>entries per variant. If this is the case, the individual entries differ</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>only in attribute name and attribute value.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMP_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Component counter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>This counts the components of a document.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URI_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>URL counter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>In thid field, depending on URI, the number of field is entered. The</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>individual URI parts are numbered.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URI</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>URL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>The length of this field is limited (4096 characters). If the URL does</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>not fit into this field, the URL is divided and put into two fields.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>The counter URI_COUNT is increased by one.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Content table</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In the table CONTENT, contents are directly transferred. Transfer is</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>via an internal table. The relevant field is called LINE:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Data element: SDOK_SDATX</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Data type: RAW</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Length: 1022</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Description: Line for binary document content, length for upload</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>Several components of various documents can be transferred in one</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>content table: A new line is started for each component and the size of</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the individual components (table COMPONENTS) gives the start and end</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>(line x) in the content table.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In the table ASCII_CONTENT contents are directly transferred. The</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>transfer occurs via an internal table. The corresponding field is</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>called LINE.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Data element: SDOK_SDAT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Data type: CHAR</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Length: 1022</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Description: Line for text document content, length for upload</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>Several components of various documents can be transferred in one</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>content table: A new line is started for each component and the size of</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the individual components (table COMPONENTS) gives the start and end</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>(line x) in the content table.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Relations table</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In the table RELATIONS relationships between documents are specified.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>The following attributes are provided for this:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOC_COUNT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document counter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>This field counts individual document variants. There can be several</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>entries per variant. If this is the case, the individual entries differ</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>only in attribute name and attribute value.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>RELA_ID</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Relations identification</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Properties table</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In the table PROPERTIES, the following two attributes are transferred:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>PROP_NAME</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Attribute name</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>PROP_VALUE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Attribute value</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This table is used for methods that address only one document.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>LZ</TDFORMAT>
+     <TDLINE/>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>General functions</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>ASSIGN</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method allows the assignment of a document to another application</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>object. The identification of the application object and the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>Document-ID of the document concerned are transferred.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>CALL_NAVIGATOR</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>Identification of the application object (document set) is by the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>attributes described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>Documents are identified by the signature table (see section &apos;Tables&apos;).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In the table EXCLUDING you can specify which functions are not to be</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>available. The following values are defined for EXCLUDING:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_MODIFY&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No editing</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_DELETE&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No deleting</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_TRANSPORT&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No transporting</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_CREATE&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No creating</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_STANDARD_DOCS&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No standard document types</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_MODIFY_ATTRIS&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No changing of attributes/keywords</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_COPY&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No copying</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_USER_OPTIONS&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No user-specific settings</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_KEYWORDS&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No keywords</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_DOCINFO&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No document information</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>&apos;NO_DISPLAY&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>No displaying of documents</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>For example, it may be that you want it to be possible only to display</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>documents in the BDN, meaning that you must explicitly exclude the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>functions for editing and deleting, in the table EXCLUDING.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>CHANGE_PROPERTIES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is used to change or reset document attributes.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;. Individual documents are</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>specified by attributes that are also described in the section</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>&apos;Parameters&apos;. Attributes are changed in table PROPERTIES, which is</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Tables&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>DELETE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is used to delete documents.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In the signature table (see section &apos;Tables&apos;) you specify which</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>documents are to be deleted. Since the object key is optional,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>everything can be deleted.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>GET_FAST_INFO</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method does not return documents, but rather information about</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>existing documents. This information is stored in the signature table</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>(see section &apos;Tables&apos;). General information and attributes are stored</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>in the signature table. Technical information about the individual</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>components from which the documents originate is stored in the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>component table. The application object (document set) is identified by</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the attributes described in the section &apos;parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In contrast to the method GET_INFO, the method GET_FAST_INFO does not</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>deliver information about the components of the document or any</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>detailed information about individual documents.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>Depending on the value of the parameter GET_PROPERTIES, some</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>(GET_PROPERTIES = &apos;X&apos;) or no document attributes are delivered.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>GET_INFO</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method does not return a document, but instead information about</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>existing documents. This information is stored in the signature and</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>component table (see section &apos;Tables&apos;). General information and</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>attributes are stored in the signature table. Technical information on</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the individual components is stored in the component table.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>GET_INFO_NEWEST_ONLY</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method returns information on the most recent version of a</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>document. Otherwise, it corresponds to the method GET_INFO.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>QUERY_DOCUMENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method allows a flexible query about the attributes of a document.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The selection criteria are specified in the table &apos;QUERY&apos;. Each entry</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>imposes restrictions on an attribute similar to the structure of a</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>&apos;Ranges&apos; table.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>COPY</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is used to copy a document.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;. The content version is</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>identified by the attributes also described in the section</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>&apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>A document is copied and the link is also copied. The following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>attributes are used as transfer parameters:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>NEW_CLASSNAME</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Class name, name of application class</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>NEW_CLASSTYPE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Class type, type of application class</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>NEW_OBJKEY</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Object key</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>NEW_CLIENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Client</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>This parameter is optional, except for client-dependent documents,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>where it is mandatory.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In the table PROPERTIES, the attribute name and attribute value are</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>transferred.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The new document is attached either to the outgoing business object or</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>a new document. The new variant is specified by the following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>attributes, analogously to the identification of the content version.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>NEW_DOC_ID,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document identification</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>NEW_DOC_VER_NO</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document version number</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>NEW_DOC_VAR_ID</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Document variant identification</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This means that this method can be used for both copying and</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>reassigning.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>CREATE_WITH_FILES/_URL/_TABLES/AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The following four methods are available for creating documents:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_WITH_FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_WITH_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_WITH_AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_WITH_URL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The difference between these methods is the source from which the data</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>is retrieved. The source can be a file name, a table or a URL.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_WITH_FILES is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_WITH_TABLE is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_WITH_AS_TABLE is identified by the following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>additional parameters:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>ASCII_CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_WITH_URL is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URIS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>&lt;LS&gt;note&lt;/&gt;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>CREATE_WITH_URL must always be called in conjunction with</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>CONFIRM_CREATE so that a document can be identified as stored</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>succcessfully.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>For this method, only a target URL is transferred. CONFIRM_CREATE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>passes on the information that the document was stored successfully.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>CREATE_WITH_OWN_URL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is a slight variation of the method CREATE_WITH_URL. The</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>source URL is not simultaneously generated in this case, but instead</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>can be externally specified. This obviously pre-supposes that the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>contents of the document can be reached via this URL.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The source URL is transferred via the Parameter URL.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In the parameter MIMETYPE, the MIMETYPE of the document must be</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>transferred.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The parameter BINARY_FLAG specifies whether the content of the Document</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>is binary (BINARY_FLAG = &apos;X&apos;).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In this case it is not necessary to subsequently call the method</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>CONFIRM_CREATE.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>UPDATE_WITH_FILES/_URL/_TABLES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The following four methods are available for changing documents:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>UPDATE_WITH_FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>UPDATE_WITH_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>UPDATE_WITH_AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>UPDATE_WITH_URL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The difference between these four methods is the source from which the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>data is retrieved. The source can be a file name, a table or a URL. The</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>table can be either an ASCII or a binary table.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) and the document are identified</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>by the attributes described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method UPDATE_WITH_FILES is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method UPDATE_WITH_TABLE is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see the section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method UPDATE_AS_WITH_TABLE is identified by the following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>additional parameters (see the section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>ASCII_CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method UPDATE_WITH_URL is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URIS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>&lt;LS&gt;Note&lt;/&gt;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>UPDATE_WITH_URL must always be called in conjunction with</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>CONFIRM_UPDATE so that a document can be identified as successfully</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>stored.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>For this method, only a target URL is transferred. CONFIRM_UPDATE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>passes in the information that the document was changed successfully.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>GET_WITH_FILES/_URL/_TABLE/AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>These methods are used to return documents. Four different methods are</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>available:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>GET_WITH_FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>GET_WITH_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>GET_WITH_AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>GET_WITH_URL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The difference between these four methods is the source from which the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>data is retrieved. The source can be either a file name, a table or a</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>URL.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method GET_WITH_FILES is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>The target directory is transferred in the table FILES.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>During a call, this table is used to limit the number of hits. After</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the call, it is used for information.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method GET_WITH_TABLE is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method GET_WITH_AS_TABLE is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>ASCII_CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method GET_WITH_URL is identified by the following additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>This table makes the entire content available.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URIS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>This specifies only the URL that points to the document.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URL_LIFETIME</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Time period for the validity of a URL, lifespan. This parameter can</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>have two different meanings:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>N2</TDFORMAT>
+     <TDLINE>This parameter concerns only URIs in the SAP System. It specifies the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>lifespan for both the URL and the URL to which that URL points.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>If the document content is in the R/3 database, URL_LIFETIME controls</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the lifetime of the table on the client.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>For more information, see the documentation on the function module</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>DP_CREATE_URL, in particular the documentation on the parameter</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>LIFETIME.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>N2</TDFORMAT>
+     <TDLINE>If GET_WITH_URL returns a general URL on a content server, the lifetime</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>can be calculated from the validity of the URL (two hours maximum). A</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>digital signature must be used.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>CONFIRM_CREATE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is always called in conjunction with CREATE_WITH_URL,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>CREATE_VARIANT_WITH_URL and CREATE_VERSION_WITH_URL.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>It must always be called when storing via the URL was successful. If it</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>was not successful, the administration data should be deleted using</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>DELETE.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In addition, this method is specified by the following parameters:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URIS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>CONFIRM_UPDATE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is called in conjunction with UPDATE_WITH_URL.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>It must always be called if storing via the URL was successful. If it</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>was not successful, the administration data should be deleted using</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>DELETE.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object is identified (document set) by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In addition, this method is specified by the following parameters:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URIS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>So this method is like method CONFIRM_CREATE, except that it concerns</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>updating and not creating documents.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Special functions</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Functions for relations</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>CREATE_RELATION</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is used to create relationships for an application object.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The outgoing document is represented by the attributes described in the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>section &apos;Parameter&apos;. The relationships specified in the table SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>are generated for this document and confirmed via the table RELATION.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>GET_RELATIONS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is used to make the relationships existing for a document</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>with the relevant partners, available.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The outgoing document is represented by the attributes described in the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>section &apos;Parameters&apos;. Table RELATION contains the relationships</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>existing for the document. The partner documents are specified in the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>table SIGNATURE.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>DELETE_RELATIONS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is used to delete the existing relationships for a</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>document.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;. The existing relationships for</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>this document, specified in the table RELATION, are deleted explicitly.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>QUERY_RELATIONS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method allows the attributes of a relationship, or the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>of the documents to which the relationship is to exist, to be queried.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>Apart from the identification of the application object and the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>document from which the relationships originate, the method has two</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>additional transfer parameters, for the attributes of the required</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>documents (Parameter SIGNATURE) and for the transfer of the search</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>range of the required relationship attributes (Parameter QUERY).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The selection criteria are specified in the table &apos;QUERY&apos;. Each entry</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>imposes restrictions on the attribute analogous to the structure of a</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>Ranges table.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Functions for versions and variants</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>CREATE_VARIANT_WITH_FILES/_TABLE/_AS_TABLE/_URL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>There are four methods available for creating language and format</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>variants:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_VARIANT_WITH_FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_VARIANT_WITH_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_VARIANT_WITH_AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_VARIANT_WITH_URL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The difference between the four methods - as with CREATE_WITH_FILES,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>CREATE_WITH_TABLE, CREATE_WITH_AS_TABLE and  CREATE_WITH_URL - is the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>source from which the data is retrieved. The source can be a file name,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>a table or a URL.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;. The variant is also identified</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>by attributes described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The new variant is identified by the following parameters:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>NEW_DOC_VAR_ID</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>New variant ID</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>NEW_DOC_VAR_TG</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>New variant tag</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>The variant tag can take the following forms:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Original</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Language variant</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Format variant</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>One of these forms must be transferred when the method is called. The</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>new variant ID is returned.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The parameter PROPERTIES is used in place of the parameter SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>(see section &apos;Tables&apos;).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_VARIANT_WITH_FILES is identified by the additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameter FILES (see section &apos;Tables&apos;).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_VARIANT_WITH_TABLE is identified by the following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>additional parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_VARIANT_WITH_TABLE is identified by the following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>additional parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>ASCII_CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_VARIANT_WITH_URL is identified by the following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>additional parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URIS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>&lt;LS&gt;Note&lt;/&gt;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>CREATE_VARIANT_WITH_URL must always be called in conjunction with</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>CONFIRM_CREATE so that a document can be identified as successfully</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>stored.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>For this method only one target URL is transferred. CONFIRM_CREATE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>passes on the information that the document was created successfully.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>CREATE_VERSION_WITH_FILES/TABLE/URL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The following four methods are available for creating content versions:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_VERSION_WITH_FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_VERSION_WITH_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_VERSION_WITH_AS_TABLE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CREATE_VERSION_WITH_URL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The difference between the four methods - as with CREATE_WITH_FILES,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>CREATE_WITH_TABLE, CREATE_WITH_AS_TABLE and CREATE_WITH_URL - is the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>source from which the data is retrieved. The source can be either file</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>name, a table or a URL.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;. The version is also identified</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>by attributes described in the section &apos;Parameters&apos;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The new variant is identified by the parameter NEW_DOC_VER_NO, that is,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>by the new version number.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The parameter PROPERTIES is used in place of the parameter SIGNATURE.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_VERSION_WITH_FILES is identified by the additional</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>parameter FILES (see section &apos;Tables&apos;).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_VARIANT_WITH_TABLE is identified by the following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>additional parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_VARIANT_WITH_AS_TABLE is identified by the following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>additional parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>ASCII_CONTENT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The method CREATE_VERSION_WITH_URL is identified by the following</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>additional parameters (see section &apos;Tables&apos;):</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>COMPONENTS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>URIS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>&lt;LS&gt;Note&lt;/&gt;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>CREATE_VERSION_WITH_URL must always be called in conjunction with</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>CONFIRM_CREATE, so that a document can be identified as succesfully</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>stored.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>For this method only one target URL is transferred. CONFIRM_CREATE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>passes on the information that the document was stored succesfully.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Functions for the transport</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>GET_TRANSPORT_INFOS</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method is used to return the entries necessary for the transport.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The application object (document set) is identified by the attributes</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>described in the section &apos;Parameters&apos;. The document(s) is/are</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>identified by the signature table, that is, by the parameter SIGNATURE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>(see section &apos;Tables&apos;).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The parameter COMMFILE_ENTRIES retrieves the necessary information for</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the transport, that is, the individual object entries for requests and</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>tasks in the Workbench Organizer.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>DOCUMENT_ENQUEUE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method prevents other users from accessing a document. You can</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>only implement one logical lock. The lock is only effective on a</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>logical level. Use of the remaining methods is possible as before. The</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>method DOCUMENT_ENQUEUE should always be implemented when it is</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>possible that several people have access to modify a document at the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>same time. If there is an error in calling this method, perhaps because</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the document is already locked by another user, you should avoid</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>executing modifying methods because otherwise data consistency cannot</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>be guaranteed.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>After finishing the modifications you should call the method</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE> DOCUMENT_DEQUEUE, which will unlock the document.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>DOCUMENT_DEQUEUE</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>This method unlocks a document which has previously been locked by the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>method DOCUMENT_ENQUEUE.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Integration of the class CL_BDS_DOCUMENT_SET.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The integration of BDS in SAP applications can be divided into three</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>phases:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>N1</TDFORMAT>
+     <TDLINE>Analysis</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>N1</TDFORMAT>
+     <TDLINE>Discussion and decision-making</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>N1</TDFORMAT>
+     <TDLINE>Implementation</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The individual phases are explained in more detail below:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>1. Analysis</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In the analysis phase general questions and the scope of the intended</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>BDS integration into the relevant SAP application are specified:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>What is the business background concerned?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>For which release is the BDS to be integrated?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>What types of document are to be stored?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Example: Bitmaps, Office documents</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>How many documents are there likely to be?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Does the SAP application need its own administration tables?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Which delivery class should the administration tables have?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>What is the ID of the application class?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>What type of application class is concerned?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Business Object Repository</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>R/3 Class Library</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>Others</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Is a transport connection required?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Is the application context client-specific?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Which BDS methods is it intended to use?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Example: CALL_NAVIGATOR (calling the BDN) or CREATE_VARIANT_WITH_FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>(creating a variant and also transferring the file name).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Are special attributes required? If so, what?</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>2. Discussion and decision-making</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>In this phase you make contact with the BDS integration group. You</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>discuss, together with the development group, how your requirements can</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>best be met. You decide which data model to use and which methods to</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>use for your application.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>3. Implementation</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>You integrate the methods required for your application.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Application examples</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The BDS can be integrated into all SAP applications that work with</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>documents and that have no special requirements for document</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>management.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>An example application is &lt;LS&gt;Office -&gt; Business Documents -&gt; Documents</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>-&gt; Find&lt;/&gt;.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Glossary</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Business Document Navigator</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>BDN.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>User interface of the Business Document Service.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Business Document Set</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>All documents for a given application object.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>DOI</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Desktop Office Integration</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Document</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>The word document usually means an offical piece of writing. It is</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>derived from the Latin word documentum = instruction/enlightenment on</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>something, helpful, proof. This interpretation of document is based on</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the conception of tangible, present written information usually on</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>paper, parchment, micro film or another tangible medium.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>Due to the digitalization of information, a document can also be any</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>form of digitalized information, for example: visible or audible</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>recordings of information.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>In the context of a document management system, a document can be</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>regarded in the context of its entire life history, that is, as a</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>sequence of differing content, language and format versions. In</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>addition, context information and links for other objects and are</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>considered.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>MIME type</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>The MIME type specifies the format of a document. The MIME type is</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>specified by the content-type and subtype.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>MIME types are registered by the IANA (Internet Assigned Number</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>Authority), frim which a list of &quot;official&quot; MIME types can be obtained.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>As well as the registered MIME Types, some unregistered ones are also</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>used. These are distinguished from the registered MIME types by the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>syntax type/x-subtype (by the insertion x-).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Class</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Definition of attributes, operations and semantics for a quantity of</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>objects.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Class name</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Unique name for class.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Class type</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Name of type of class. The following types are currently defined:</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>BO</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>Business Object Repository</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>CL</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>Class Library</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B2</TDFORMAT>
+     <TDLINE>OT</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>BL</TDFORMAT>
+     <TDLINE>Other</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Logical system</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Instance of an SAP System</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Object</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>An active unit, concretely existing in the current system. Each object</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>is an example for a class.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Object key</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Unique identification of an object.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>/</TDFORMAT>
+     <TDLINE>Unique identification of an instance within the logical system and the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>class. The SAP application can specify the object key. Alternatively,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the BDS can generate the object type in the form of a GUID (only for</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>the CREATE method).</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Variant</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Variants that are semantically equal to the content version, but</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>present the same content in a different language or in a different</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>technical format, can be derived from all content versions.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>B1</TDFORMAT>
+     <TDLINE>Version</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AL</TDFORMAT>
+     <TDLINE>Documents can have different statuses throughout their life cycle. The</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>status of a document can be changes by content versioning. Content</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>version is used here as a synonym of version. New versions require</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>editing options.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U1</TDFORMAT>
+     <TDLINE>&amp;RELATIONS&amp;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE/>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U1</TDFORMAT>
+     <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Example: CREATE_WITH_FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>data: o_document_set type ref to cl_bds_document_set.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>create object o_document_set.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>move: &apos;1&apos;                     to wa_signature-doc_count,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>      &apos;1&apos;                     to wa_files-doc_count,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>      &apos;C:\SAPPCADM&apos;           to wa_files-directory,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>      &apos;BDSPresentation.PPT&apos;   to wa_files-filename.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE> append wa_signature to i_signature.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE> append wa_files to i_files.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>LZ</TDFORMAT>
+     <TDLINE/>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE> call method o_document_set-&gt;create_with_files</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>          exporting</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>               classname   = MyApplication&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>               classtype   = OT&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>          changing</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>               object_key  = i_object_key</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>               files       = i_files</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>               signature   = i_signature.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U2</TDFORMAT>
+     <TDLINE>Example: GET_WITH_FILES</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>data: o_document_set type ref to cl_bds_document_set.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>create object o_document_set.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>move: &apos;1&apos;                     to wa_signature-doc_count,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>      BDS_LOC1  B18EBB28E773D21197E70060B0672A3C&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>                              to wa_signature-doc_id,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>      &apos;1&apos;                     to wa_signature-doc_ver_no,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>      &apos;1&apos;                     to wa_signature-doc_var_id,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>      &apos;1&apos;                     to wa_files-doc_count,</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>      &apos;C:\SAPPCADM&apos;           to wa_files-directory.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>append wa_signature to i_signature.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>append wa_files to i_files.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>LZ</TDFORMAT>
+     <TDLINE/>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>call method o_document_set-&gt;get_with_files</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>          exporting</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>              classname      = MyApplication&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>              classtype      = OT&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>              object_key     = 0815&apos;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>          changing</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>              files          = i_files</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>              signature      = i_signature.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U1</TDFORMAT>
+     <TDLINE>&amp;HINTS&amp;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>The BDS will be available for R/3 Release 4.6A, for pilot projects.</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>U1</TDFORMAT>
+     <TDLINE>&amp;FURTHER_SOURCES_OF_INF&amp;</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT>AS</TDFORMAT>
+     <TDLINE>For more information about the Business Document Service (BDS), see the</TDLINE>
+    </TLINE>
+    <TLINE>
+     <TDFORMAT/>
+     <TDLINE>SAP Library unter Basis - Basis Services - Business Document Service.</TDLINE>
+    </TLINE>
+   </LINES>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>ASSIGN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Link Document</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CALL_NAVIGATOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Call Business Document Navigator</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CHANGE_PROPERTIES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Document Properties</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CONFIRM_CREATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Confirmation that Document has been Created</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CONFIRM_UPDATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Confirmation that Document has been Changed</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>COPY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Copy Document</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_RELATION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create relationship</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_VARIANT_WITH_AS_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Variant with Transfer of ASCII Contents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_VARIANT_WITH_FILES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Variant with Transfer of File Name</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_VARIANT_WITH_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Variant with Transfer of Contents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_VARIANT_WITH_URL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Variant with URL Transfer</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_VERSION_WITH_AS_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Document Version with Transfer of ASCII Contents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_VERSION_WITH_FILES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Document Version with Transfer of File Name</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_VERSION_WITH_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Document Version with Transfer of Contents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_VERSION_WITH_URL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Document Version with URL Transfer</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_WITH_AS_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Document using Internal ASCII Table</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_WITH_FILES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Document with Transfer of File Name</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_WITH_OWN_URL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Document Specifying a URL</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_WITH_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Document using Internal Table</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>CREATE_WITH_URL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Document using URL</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>DELETE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete document</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>DELETE_PROPERTIES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete Document Properties</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>DELETE_RELATIONS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete Relationships</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>DOCUMENT_DEQUEUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Unlock Document</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>DOCUMENT_ENQUEUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Lock Document</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>ERROR_HANDLING</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Error Handling</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_COMPONENT_PROPERTIES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Determining Properties of a Component</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_FAST_INFO</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Fetch Quick Info on Documents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_INFO</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Fetch Information on Documents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_INFO_NEWEST_ONLY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Information on most Recent Document Version</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_RELATIONS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Return all Relationships</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_TRANSPORT_INFOS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Retrieve Necessary Transport Entries</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_WITH_AS_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Return Document by Transferring ASCII Contents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_WITH_COMP_URL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Return Document by Specifying a URL</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_WITH_FILES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Return Document by Transferring Files</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_WITH_OWN_URL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Return Document by Specifying a URL</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_WITH_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Return Document by Transferring Content</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>GET_WITH_URL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Return Document by Transferring URL</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>QUERY_DOCUMENTS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Query Documents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>QUERY_RELATIONS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Query Relationships</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>TY_FUNCNAME</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Application Exit</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>TY_LOG_LEVEL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Log Level</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>UPDATE_WITH_AS_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Document with Transfer of ASCII Contents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>UPDATE_WITH_FILES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Document with Transfer of File Names</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>UPDATE_WITH_TABLE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Document with Transfer of Contents</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_BDS_DOCUMENT_SET</CLSNAME>
+     <CMPNAME>UPDATE_WITH_URL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Document with URL Transfer</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

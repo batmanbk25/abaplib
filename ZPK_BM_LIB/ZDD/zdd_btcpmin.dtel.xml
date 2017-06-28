@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZDD_BTCPMIN</ROLLNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DOMNAME>NUM02</DOMNAME>
+    <ROUTPUTLEN>000000</ROUTPUTLEN>
+    <MEMORYID/>
+    <LOGFLAG/>
+    <HEADLEN>20</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>20</SCRLEN3>
+    <DDTEXT>Duration period (in minutes) for a batch job</DDTEXT>
+    <REPTEXT>Minutes</REPTEXT>
+    <SCRTEXT_S>Minutes</SCRTEXT_S>
+    <SCRTEXT_M>Minutes</SCRTEXT_M>
+    <SCRTEXT_L>Minutes</SCRTEXT_L>
+    <ACTFLAG/>
+    <APPLCLASS>SBTC</APPLCLASS>
+    <AUTHCLASS>00</AUTHCLASS>
+    <AS4USER/>
+    <AS4DATE>0000-00-00</AS4DATE>
+    <AS4TIME>00:00:00</AS4TIME>
+    <DTELMASTER>E</DTELMASTER>
+    <RESERVEDTE/>
+    <DTELGLOBAL/>
+    <SHLPNAME/>
+    <SHLPFIELD/>
+    <DEFFDNAME/>
+    <DATATYPE/>
+    <LENG>000000</LENG>
+    <DECIMALS>000000</DECIMALS>
+    <OUTPUTLEN>000000</OUTPUTLEN>
+    <LOWERCASE/>
+    <SIGNFLAG/>
+    <CONVEXIT/>
+    <VALEXI/>
+    <ENTITYTAB/>
+    <REFKIND>D</REFKIND>
+    <REFTYPE/>
+    <PROXYTYPE/>
+    <LTRFLDDIS/>
+    <BIDICTRLC/>
+    <NOHISTORY/>
+   </DD04V>
+   <TPARA>
+    <PARAMID/>
+    <PARTEXT/>
+   </TPARA>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+    <LANGU>쁩</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>Periodendauer (Minuten) für einen Batch-Job</DDTEXT>
+     <REPTEXT>periodischer Job</REPTEXT>
+     <SCRTEXT_S>Job</SCRTEXT_S>
+     <SCRTEXT_M>periodischer Job</SCRTEXT_M>
+     <SCRTEXT_L>periodischer Job</SCRTEXT_L>
+    </item>
+    <item>
+     <DDLANGUAGE>쁩</DDLANGUAGE>
+     <DDTEXT>Duration period (in minutes) for a batch job</DDTEXT>
+     <REPTEXT>Phút</REPTEXT>
+     <SCRTEXT_S>Phút</SCRTEXT_S>
+     <SCRTEXT_M>Phút</SCRTEXT_M>
+     <SCRTEXT_L>Phút</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
